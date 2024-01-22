@@ -4,20 +4,24 @@ class Solution {
             return new int[]{-1};
         }
 
-        int[] answer = new int[n];
+        int[] result = new int[n];
         int quotient = s / n;
         int remainder = s % n;
 
-        // 몫을 기반으로 집합 구성
+        // 몫의 value를 균등하게 n개만큼 넣음
         for (int i = 0; i < n; i++) {
-            answer[i] = quotient;
+            result[i] = quotient;
         }
 
-        // 나머지를 분배하여 곱 최대화
-        for (int i = 0; i < remainder; i++) {
-            answer[n - 1 - i]++;
+        int j = n-1;
+        // 나머지를 뒤에서부터 1씩 분배
+        while(remainder > 0) {
+        	result[j] += 1;
+        	remainder -= 1;
+        	j -= 1;
+        	
         }
-
-        return answer;
+       
+        return result;
     }
 }
