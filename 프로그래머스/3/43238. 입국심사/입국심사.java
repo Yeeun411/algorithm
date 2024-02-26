@@ -11,6 +11,7 @@ class Solution {
             long mid = (left + right) / 2; // 중간값
             long count = 0; // mid 시간 동안 심사할 수 있는 인원 수
 
+            
             //mid 시간 동안 심사 가능한 인원 수 계산
             for (int time : times) {
                 count += mid / time;
